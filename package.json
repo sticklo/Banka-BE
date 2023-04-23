@@ -1,0 +1,28 @@
+{
+  "name": "banka-be",
+  "version": "1.0.0",
+  "description": "Banka -  a light-weight core banking application that powers banking operations like account",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 20000",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sticklo/Banka-BE.git"
+  },
+  "author": "Sticklo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sticklo/Banka-BE/issues"
+  },
+  "homepage": "https://github.com/sticklo/Banka-BE#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.2.1",
+    "prettier": "2.8.8"
+  }
+}

@@ -1,0 +1,15 @@
+Session 1. 
+- create a project 
+- follow set folder structure
+- setup ESLint/Prettier for linting
+- setup husky and lint staged
+- setup Babel to enable use of ES6
+- update readme 
+
+Session 2
+- setup mongo and express 
+- setup testing using jest
+- setup swagger documentaion 
+
+TODO Later 
+- setup travis for code coverage and any other badge of interest
