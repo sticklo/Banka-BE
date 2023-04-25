@@ -12,4 +12,4 @@ Session 2
 - setup swagger documentaion 
 
 TODO Later 
-- setup travis for code coverage and any other badge of interest
+- setup travis for code coverage and any other badge of interest 
