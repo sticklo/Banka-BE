@@ -1,20 +1,4 @@
-# .eslintrc.json
-{
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["prettier"],
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
-  "rules": {
-    "no-console": "off",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "import/extensions": "off"
-  }
-}
+
 # .eslintignore
 node_modules/
+dist
