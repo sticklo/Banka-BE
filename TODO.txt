@@ -13,3 +13,4 @@ Session 2
 
 TODO Later 
 - setup travis for code coverage and any other badge of interest 
+- convert project to TS
