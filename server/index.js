@@ -1,35 +1,28 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const mongoose = require('mongoose');
-const specs = require('../swagger');
+const swaggerSpecs = require('../swagger');
+// eslint-disable-next-line import/no-unresolved
+require('dotenv').config();
+
+const mongoURI = process.env.MONGO_URI;
+const port = process.env.PORT;
 
 const app = express();
-/**
- * @swagger
- * /:
- *   get:
- *     summary: Welcome to Banka API
- *     description: Returns a welcome message for Banka API.
- *     responses:
- *       200:
- *         description: A successful response with the welcome message.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Welcome to Banka API
- */
+
 app.get('/', (req, res) => {
   res.send('Welcome to banka API');
 });
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.all('*', (_req, res) => {
+  res.status(404).json({
+    error: 'This route does not exist yet!',
+  });
+});
 mongoose
-  .connect('mongodb://localhost:27017/acmedb', { useNewUrlParser: true })
+  .connect(mongoURI, { useNewUrlParser: true })
   .then(() => {
-    app.listen(3000, () => {
+    app.listen(port, () => {
       console.log('The server is active on port 3000');
     });
   })
@@ -37,7 +30,4 @@ mongoose
     console.error('Error connecting to the database:', error);
   });
 
-module.exports = async () => {
-  await mongoose.connection;
-  return app;
-};
+module.exports = app;
