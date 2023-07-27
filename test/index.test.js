@@ -1,20 +1,16 @@
-/* eslint-disable no-undef */
-const mongoose = require('mongoose');
-const request = require('supertest');
-const app = require('../server/index');
-require('dotenv').config();
+import request from 'supertest';
+import app from '../server/index';
 
-// let app;
-
-beforeAll(async () => {
-  await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
-});
-afterAll(async () => {
-  await mongoose.connection.close();
-});
-
-test('GET / should return "Welcome to banka API"', async () => {
-  const response = await request(app).get('/');
+test('GET / should return "Welcome to Banka API"', async () => {
+  const response = await request(app).get('/v1');
   expect(response.status).toBe(200);
-  expect(response.text).toBe('Welcome to banka API');
+  expect(response.text).toBe('Welcome to Banka API');
+});
+
+
+test('GET /random should throw an error if a route does not exist', async () => {
+  const response = await request(app).get('/v1/random');
+  console.log(response.body)
+  expect(response.status).toBe(404);
+  expect(response.body.error).toBe('This route does not exist yet!');
 });

@@ -9,8 +9,16 @@ Session 1.
 Session 2
 - setup mongo and express 
 - setup testing using jest
-- setup swagger documentaion 
+- setup swagger documentation 
 
 TODO Later 
 - setup travis for code coverage and any other badge of interest 
 - convert project to TS
+
+Session 3
+- USER SIGN UP
+- setup register user endpoint
+- Joi for input validation(This function should be a middleware on the route)
+- setup routes specific to domains e.g user
+- make sure passwords are hashed before sving to db(see bcryptjs on npm)
+- next steps setting up jwt to sign user sessions
