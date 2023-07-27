@@ -1,0 +1,47 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Banka API API",
+    "description": "Banka API Documentation",
+    "version": "1.0",
+    "contact": {
+      "email": ""
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "Welcome",
+      "description": "Welcome to Banka API Documentation"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Welcome"
+        ],
+        "summary": "GET API endpoint for welcome page",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "welcome"
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "JWT": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
